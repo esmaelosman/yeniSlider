@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+<div class="con">
+    <div class="button r" id="button-1">
+        <input type="checkbox" class="checkbox" />
+        <div class="knobs"></div>
+        <div class="layer"></div>
+    </div>
+    <div class="parent loader d_90">
+        <div class="div1 rotating" data-order="0" data-degree="135" >
+            <img src="img/r34.png">
+        </div>
+        <div class="div2 rotating" data-order="1" data-degree="225" >
+            <img src="img/r35.png">
+        </div>
+        <div class="div3 rotating" data-order="2" data-degree="315" >
+            <img src="img/mustang.png">
+        </div>
+        <div class="div4 rotating" data-order="3" data-degree="45" >
+            <img src="img/camaro.png">
+        </div>
+    </div>
+   
+    <div class="content fade-in"> 
+    </div>
+    <div class="line">
+        <h2 class="flipX" id="carTitle"></h2>
+    </div>
+    <div class="slider-outer slider-in">
+        <div class="slider">
+            <img src="img/r34.png" class="slide"  alt="Resim 1">
+            <img src="img/r35.png" class="slide active" alt="Resim 2">
+            <img src="img/mustang.png" class="slide" alt="Resim 3">
+            <img src="img/camaro.png" class="slide" alt="Resim 4">
+        </div> 
+    </div>
+
+
+
+    <div class="prev">&lt;</div>
+    <div class="next">&gt;</div>
+
+    <div class="pagination">
+        <div class="box">
+            <img src="img/r34.png" alt="Fotoğraf 1">
+          </div>
+          <div class="box">
+            <img src="img/r35.png" alt="Fotoğraf 2">
+          </div>
+          <div class="box">
+            <img src="img/mustang.png" alt="Fotoğraf 3">
+          </div>
+          <div class="box">
+            <img src="img/camaro.png" alt="Fotoğraf 4">
+          </div>
+    </div>
+
+   
+</div>
+
+
+<script src="js/jquery-3.6.2.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

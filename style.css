@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.row-reverse {
+
+    flex-direction: row-reverse;
+}
+
+.con {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    place-content: end space-between;
+    overflow: hidden;
+
+}
+
+.loader {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    left: 22%;
+    transform: rotate(135deg);
+    /* transition: transform 1ms; */
+
+}
+
+
+.loader > div {
+    width: 47%;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.3s;
+    /* Dönüş animasyonu */
+    overflow: hidden;
+
+}
+
+
+.content {
+    max-width: 55%;
+    min-height: 50%;
+    flex: 1;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 160px;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    background-color: #C0C0C0;
+    place-content: end;
+    overflow: hidden;
+    position: relative;
+    left: 43%;
+
+}
+
+
+.loader > div:nth-child(1) {
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border: 6px solid rgb(211, 211, 211);
+    background: rgb(228, 208, 10);
+    background-size: 80px;
+}
+
+.loader > div:nth-child(2) {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border: 6px solid rgb(211, 211, 211);
+    background: rgb(136, 8, 8);
+    background-size: 80px;
+}
+
+.loader > div:nth-child(3) {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 6px solid rgb(211, 211, 211);
+    background: rgb(52, 52, 52);
+    background-size: 80px;
+}
+
+.loader > div:nth-child(4) {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 6px solid rgb(211, 211, 211);
+    background: rgb(93, 63, 211);
+    background-size: 80px;
+}
+
+
+.loader img {
+    width: 100%;
+    display: block;
+    /*transform: rotate(318deg) translate(-19%, 32%);*/
+
+}
+
+
+.slider {
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    float: left;
+    padding-top: 22px;
+    height: 300px;
+    right: 0;
+    position: relative;
+
+}
+
+.slider img {
+    display: none;
+    width: 500px;
+    height: 300px;
+    position: relative;
+    right: -100%;
+    transition: transform 2s 2s;
+
+}
+
+.slider img.active {
+    display: inline-block;
+    animation: slider-in 1s ease-in 1s forwards;
+}
+
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    z-index: 1;
+    /* Ikonları öne çıkar */
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+
+.pagination {
+    position: absolute;
+    bottom: 40px;
+    right: 36px;
+    display: flex;
+}
+
+.box {
+    width: 86px;
+    height: 86px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+
+.box img {
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.box:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 5px solid rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+}
+
+.box.active {
+    width: 100px;
+    height: 100px;
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.box:not(.active) {
+    filter: grayscale(80%);
+}
+
+
+.loader .rotating {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.loader .rotating img {
+    object-fit: contain;
+}
+
+.fade-in {
+    animation: fade-in 1s ease-in forwards;
+}
+
+.slider-in {
+    animation: slider-in 3s ease-in 2s forwards;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div3 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.div4 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+
+@keyframes fade-in {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slider-in {
+    from {
+        /*transform: translateX(100%);*/
+        right: -100%;
+
+    }
+
+    to {
+        /*transform: translateX(0);*/
+        right: 0%;
+
+    }
+}
+
+
+.button-cover,
+.knobs,
+.layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button {
+    position: relative;
+    bottom: 29%;
+    left: 31%;
+    width: 74px;
+    height: 36px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+}
+
+.button.r,
+.button.r .layer {
+    border-radius: 100px;
+}
+
+.button.b2 {
+    border-radius: 2px;
+}
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs {
+    z-index: 2;
+}
+
+.layer {
+    width: 100%;
+    background-color: #98cee4;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+/* Button 1 */
+#button-1 .knobs:before {
+    content: "YES";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #03a9f4;
+    border-radius: 50%;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+#button-1 .checkbox:checked + .knobs:before {
+    content: "NO";
+    left: 42px;
+    background-color: #f44336;
+}
+
+#button-1 .checkbox:checked ~ .layer {
+    background-color: #eeacac;
+}
+
+#button-1 .knobs,
+#button-1 .knobs:before,
+#button-1 .layer {
+    transition: 0.3s ease all;
+}
+
+
+/* crops animations that exceeds one line area */
+.line {
+    position: relative;
+    bottom: 13%;
+    left: 7%;
+    overflow: hidden;
+}
+
+/* flipping class and key frames*/
+.flipX {
+    color: #fff;
+    animation: 1s anim-flipX ease infinite;
+}
+
+@keyframes anim-flipX {
+    0% {
+        opacity: 0;
+        transform: rotateX(90 def);
+    }
+
+    50% {
+        opacity: 1;
+        transform: rotateX(720deg);
+    }
+
+    100% {
+        /* animate nothing to pause animation at the end */
+        opacity: 1;
+        transform: rotateX(720deg);
+    }
+}
